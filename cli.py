@@ -8,11 +8,11 @@ def cli():
         isp = float(input("Bitte geben sie den Spezifischen Impuls ihres Raketentriebwerkes in Sekunden ein.\n>> "))
         zielhoehe = float(input("Bitte geben sie die Höhe ein, welche von ihrer Rakete erreicht werden soll. (In Metern)\n>> "))
         leermasse = float(input("Bitte geben sie die Masse ihrer Rakete ohne Treibstoff ein. (In Kilogram)\n>> "))
-        
-    rfc_call(genauigkeit)
+
+    rfc_call(genauigkeit, fschub, isp, zielhoehe, leermasse)
 
 
 
-def rfc_call(genauigkeit):
+def rfc_call(genauigkeit, fschub, isp, zielhoehe, leermasse):
     if genauigkeit == 1:
         rocket_fuel_calculation.calc1(fschub, isp, zielhoehe, leermasse)
