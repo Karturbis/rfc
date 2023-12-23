@@ -15,5 +15,5 @@ def cli():
 
 def rfc_print(genauigkeit, fschub, isp, zielhoehe, leermasse):
     if genauigkeit == 1:
-        print("Die Benötigte Menge an Treibstoff sind: " + rocket_fuel_calculation.calc1(fschub, isp, zielhoehe, leermasse) + "Kilogram.")
+        print("Die Benötigte Menge an Treibstoff sind etwa: " + str(round(rocket_fuel_calculation.calc1(fschub, isp, zielhoehe, leermasse), 3)) + " Kilogram.")
 
