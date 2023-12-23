@@ -1,0 +1,93 @@
+Gesuchter Wert:
+    Menge an Treibstoff, die benötigt wird.[Kg]
+
+Gegeben:
+    Gewicht der Rakete ohne Treibstoff. [Kg]
+    Höhe, welche die Rakete erreichen soll. [m](h2)
+    Spezifischer Impuls des Antriebs. [s] (Effizienz)(Isp)
+    Massendurchsatz [kg/s] (m.) m. ist also die Treibstoffverbrauchsrate d.h. die Ableitung des Treibstoffverbrauches zur Zeit.
+
+Der Weg 1:
+
+    Wir Ignorieren den Luftwiederstand und den Fakt, das die Gravitation sich aendert.
+
+    Berechnung nach dem Energieerhaltungssatz:
+    Eges = Epot(Bestehend aus der Lageenergie und der Treibstoffenergie) + Ekin = konst
+    Ekin ist am Start- und Zielort = 0
+    Da Ekin = 0:
+        Eges = Elage + Eschub
+    Eschub ist am Zielort = 0
+
+    Lageenergie berechnet sich mit m*g*h
+        m = Gewicht der Rakete ohne Treibstoff. [kg]
+        g = 9,81 [m/s²]
+        h1 = 0 [m]
+        h2 = Endhöhe der Rakete [m]
+    
+    Elage1 = m*g*h1
+    Elage2 = m*g*h2
+
+    Da Eschub2 = 0 && Eges = Elage + Eschub = konst:
+        Eschub1 + Elage1 = 0 + Elage2 | -Elage1
+        Elage2 - Elage1 = Eschub
+    
+    Eschub = m[kg]*g[m/s²]*h2[m] - m[kg]*g[m/s²]*h1[m] |
+    Eschub = m[kg]*g[m/s²]*(h2[m]-h1[m])
+
+    Fschub[N] = g[m/s²]*Isp[s]*m.[kg/s]
+
+    Eschub = Fschub * (h2-h1) | Einsetzen
+    m[kg]*g[m/s²]*(h2[m]-h1[m])= g[m/s²]*Isp[s]*m.[kg/s]*(h2[m]-h1[m])
+    Einheiten check:
+        m²*kg/s² = m²*kg/s² | passed
+    
+    m*g*(h2-h1) = g*Isp*m.*(h2-h1) | /(h2-h1)
+    m*g = g*Isp*m. | /g
+    m = Isp*m.
+    
+    Wir wollen alles auf einer Seite haben, da m. die Ableitung des Treibstoffverbrauches über die Zeit ist, 
+    also ist das Integral von m. der Treibstoffverbrauch der Rakete. Wir brauchen also zusätzlich zu der Funktion
+    von m. auch die Zeit, welche die Rakete bis zu ihrem Ziel benötigt, um dann von 0 bis Zeitpunkt des Zieles über f(m.) dm. zu
+    Integrieren.
+
+    0 = (Isp/m)*m.
+    f(m.) = (Isp/m)*m.¹
+    F(m.) = (Isp/2m)*m.²
+
+    Berechnung der Zeit des Fluges:
+        Ist Kompliziert //TODO
+    
+Der Weg 2:
+
+    Gesucht:
+        Masse an benötigtem Raketentreibstoff
+    
+    Auf dem Weg gesucht:
+        Vollgewicht der Rakete [kg] (m0)
+
+    Gegeben:
+        Rückstoßkraft, welche der Antrieb erzeugt. [N] (Fschub)
+        Spezifischer Impuls des Antriebs, auch als Effizienz bekannt. [s] (Isp)
+        Erdbeschleunigung [m/s²] (g) = 9,81
+        Zielhöhe der Rakete [m] (h1)
+        Leergewicht der Rakete [kg] (m1)
+        Eulersche Zahl (e)
+
+    Ekin = 1/2 m*v² = Die Arbeit, welche verrichtet wurde, um die Rakete zu den Geschwindigkeitsbetrag der Rakete zu ändern.
+    Fg*h1 = 1/2 m*v² | /m |*2
+
+    2*Fg*h1/m = v²| Wurzel ziehen
+    sqrt(2*Fg*h1/m) = v | kürzen von Fg(was m*ag ist) mit m
+    sqrt(2*g*h1) = v ={Delta}v, da v0 = 0
+    {Delta}v wird benötigt, um in die Raketengrundgleichung eingesetzt zu werden.
+
+    Die Raketengleichung:
+        {Delta}v = Isp*g*Logarythmus(m0/m1) | /Isp*g
+        {Delta}v/Isp*g = Logarythmus(m0/m1) | Exponieren beider Seiten
+        e^({Delta}v/Isp*g) = m0/m1 | *m1
+        m1*e^({Delta}v/Isp*g) = m0
+
+    Die Berechnung des Endergebnisses:
+        Masse an benötigtem Raketentreibstoff = m1*e^(sqrt(2*g*h1)/Isp*g)
+        Das ist die Entgülitge Formel zum Berechnen des Raketentreibstoffes, bei Vernachlässigung
+        von Reibung und Gravitationsfeldern.
