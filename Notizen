@@ -7,7 +7,7 @@ Gegeben:
     Spezifischer Impuls des Antriebs. [s] (Effizienz)(Isp)
     Massendurchsatz [kg/s] (m.) m. ist also die Treibstoffverbrauchsrate d.h. die Ableitung des Treibstoffverbrauches zur Zeit.
 
-Der Weg 1:
+Der Weg 0:
 
     Wir Ignorieren den Luftwiederstand und den Fakt, das die Gravitation sich aendert.
 
@@ -57,7 +57,7 @@ Der Weg 1:
     Berechnung der Zeit des Fluges:
         Ist Kompliziert //TODO
     
-Der Weg 2:
+Der Weg 1:
 
     Gesucht:
         Masse an benötigtem Raketentreibstoff
@@ -68,7 +68,7 @@ Der Weg 2:
     Gegeben:
         Rückstoßkraft, welche der Antrieb erzeugt. [N] (Fschub)
         Spezifischer Impuls des Antriebs, auch als Effizienz bekannt. [s] (Isp)
-        Erdbeschleunigung [m/s²] (g) = 9,81
+        Erdbeschleunigung/Ortsfaktor [m/s²] (g) = 9,81
         Zielhöhe der Rakete [m] (h1)
         Leergewicht der Rakete [kg] (m1)
         Eulersche Zahl (e)
