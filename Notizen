@@ -104,8 +104,47 @@ Der Weg 1:
             Benötigte Energie um die Rakete auf die vorgegebene höhe zu bringen.
         
         Gegeben:
-            Schub[N]
-            Höhe[m]
-            Masse der Rakete[kg]
+            Fschub[N] (Konstant, hier wahrscheinlich den Mittelwert aus Schub bei 1atm und Schub bei Vacuum nehmen)
+            Höhe[m] (Die Höhe, welche die Rakete erreichen soll)
+            Trockenmasse der Rakete[kg] (Die Masse der Rakete ohne Treibstoff)
         
+        Auf dem Weg zu berechnen:
+            Zeit[s] (Zeit, welche die Rakete benötigt um die vorgegebene Höhe zu erreichen)
+            Geschwindigkeit[m/s] (nicht Konstant, die momentangeschwindigkeit der Rakete)
         
+        Annahmen:
+            Die Rakete Startet und fliegt senkrecht
+            Es Existiert kein Reibungswiederstand.
+
+        Die Rakete vollzieht eine ungleichmäßig beschleunigte bewegung, da der Schub des Triebwerkes
+        konstant bleibt, die Gravitation aber mit dem Quadrat der Entfernung abnimmt.
+        a = v' = s''
+        Die Beschleunigung lässt dich berechnen mit:
+            F = m*a
+
+            Fges = m*a | /m
+            Fges/m = a
+
+            Fges = Fschub + Fg(In unserem Fall aufgrund der Bezugssystemwahl negativ)
+
+            Fg = G*m*M/r²
+            Wobei:
+            Fg = Gravitationskraft
+            G = Gravitationskonstante = 6.67430*10⁻¹¹
+            m = Masse des Raumschiffes
+            M = Masse des Planeten, von welchem aus gestartet wird (Masse der Erde ca = 5.9722*10²⁴kg)
+            r = Abstand des Raumschiffes zum Startplaneten
+
+            a = (Fschub - G*m*M/r²)/m
+            Einheitencheck:
+            a[m/s²] = (Fschub[kg*m/s²] - G[m³/kg*s²]*m[kg]*M[kg]/r[m]²)/m[kg]
+            m/s² = (m/s² - m/s²) | passed
+
+
+            v = Stammfunktion von a über die Zeit Integriert
+            s = Stammfunktion von v über die Zeit Integriert
+
+
+        Die Bewegung ist Eindimensional, da die Rakete sich nur auf der Y-Achse bewegt.
+        
+
