@@ -36,6 +36,8 @@ class Rocket_fuel_calculation:
 
         Diese Methode vernachlässigt Luftwiederstand und die Bewegung im Gravitationsfeld, ausserdem werden auch die
         verschiedenen Stufen der Rakete vernachlässigt.
+
+        Achtung! Diese Methode gibt nicht realistische Werte zurück!
         """
 
         # Berechnung der benötigten geschwindigkeitsänderung, um die Zielhöhe zu erreichen.
