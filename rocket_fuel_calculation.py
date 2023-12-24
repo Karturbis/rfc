@@ -18,9 +18,11 @@ class rocket_fuel_calculation:
         pass
 
 
-    def calc1(fschub:float, isp:float, zielhoehe:float, leermasse:float) -> float:
+    def calc1() -> float:
 
-        #Masse an benötigtem Raketentreibstoff = m1*e^(sqrt(2*g*h1)/Isp*g)
-        return (leermasse*math.exp(math.sqrt(2*ortsfaktor*zielhoehe)/isp*ortsfaktor))
+        # Berechnung der benötigten geschwindigkeitsänderung, um die Zielhöhe zu erreichen.
+        deltav = math.sqrt(2*ortsfaktor*zielhoehe)
+
+        return (leermasse*math.exp(deltav/isp*ortsfaktor))
 
         
