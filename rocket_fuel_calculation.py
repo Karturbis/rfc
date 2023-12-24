@@ -1,7 +1,7 @@
 import math
 
 
-class rocket_fuel_calculation:
+class Rocket_fuel_calculation:
     """Eine Klasse zum berechnen des benötigten Raketentreibstoffes, um die Rakete
     auf eine bestimmte höhe zu bringen.
 
@@ -12,7 +12,7 @@ class rocket_fuel_calculation:
 
     ortsfaktor = 9.81
 
-    def __init__(genauigkeit, fschub, isp, zielhoehe, leermasse):
+    def __init__(self, genauigkeit, fschub, isp, zielhoehe, leermasse):
 
         self.genauigkeit = genauigkeit
         self.fschub = fschub
@@ -21,11 +21,11 @@ class rocket_fuel_calculation:
         self.leermasse = leermasse
 
 
-    def calc0():
+    def calc0(self):
         pass
 
 
-    def calc1() -> float:
+    def calc1(self) -> float:
         """Methode 1 zum Berechnen des Benötigten Raketentreibstoffes.
         Diese Methode Benutzt die Parameter:
         fschub (Den schub, welchen das Reketentriebwerk aufbringt in Newton)
@@ -39,7 +39,7 @@ class rocket_fuel_calculation:
         """
 
         # Berechnung der benötigten geschwindigkeitsänderung, um die Zielhöhe zu erreichen.
-        deltav = math.sqrt(2*ortsfaktor*zielhoehe)
+        self.deltav = math.sqrt(2*ortsfaktor*zielhoehe)
 
         # Berechnung des benötigten Treibstoffes in kg. Das Ergebnis wird an die Aufrufende methode zurückgegeben.
         return (leermasse*math.exp(deltav/isp*ortsfaktor))
