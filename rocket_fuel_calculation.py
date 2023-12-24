@@ -2,6 +2,13 @@ import math
 
 
 class rocket_fuel_calculation:
+    """Eine Klasse zum berechnen des benötigten Raketentreibstoffes, um die Rakete
+    auf eine bestimmte höhe zu bringen.
+
+    Diese Klasse enthält mehrere methoden zum Berechnen des Treibstoffes, welche mit verschieden vielen
+    Parametern arbeiten.
+
+    Je mehr Parameter, desto genauer ist am Ende das Ergebnis."""
 
     ortsfaktor = 9.81
 
@@ -19,6 +26,14 @@ class rocket_fuel_calculation:
 
 
     def calc1() -> float:
+        """Methode 1 zum Berechnen des Benötigten Raketentreibstoffes.
+        Diese Methode Benutzt die Parameter:
+        fschub (Den schub, welchen das Reketentriebwerk aufbringt in Newton)
+        isp (Den Spezifischen Impuls des Triebwerkes in Sekunden)
+        zielhoehe (Die Höhe, welche die Rakete erreichen soll in Metern)
+        leermasse (Die Leermasse der Rakete, also ohne Treibstoff, aber mit allem anderen in Kilogram)
+        ortsfaktor (da dies nur eine Simple berechnung ist, wird für den Ortsfaktor 9.81m/s² eingesetzt)
+        """
 
         # Berechnung der benötigten geschwindigkeitsänderung, um die Zielhöhe zu erreichen.
         deltav = math.sqrt(2*ortsfaktor*zielhoehe)
