@@ -23,6 +23,7 @@ class rocket_fuel_calculation:
         # Berechnung der benötigten geschwindigkeitsänderung, um die Zielhöhe zu erreichen.
         deltav = math.sqrt(2*ortsfaktor*zielhoehe)
 
+        # Berechnung des benötigten Treibstoffes in kg. Das Ergebnis wird an die Aufrufende methode zurückgegeben.
         return (leermasse*math.exp(deltav/isp*ortsfaktor))
 
         
