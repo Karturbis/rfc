@@ -91,3 +91,14 @@ Der Weg 1:
         Masse an benötigtem Raketentreibstoff = m1*e^(sqrt(2*g*h1)/Isp*g)
         Das ist die Entgülitge Formel zum Berechnen des Raketentreibstoffes, bei Vernachlässigung
         von Reibung und Gravitationsfeldern.
+
+    Der Weg 2:
+
+        {Delta}v = Isp*g*ln(m0/mf)
+
+        {Delta}v ist die gesamt benötigte geschwindigkeitsänderung
+        Isp ist der Spezifische Impuls des Antriebs
+        g ist die Gravitation am Erdboden (etwa 9.81)
+        m0 ist die Startmasse der Rakete, d.h. Trockenmasse + Treibstoff
+        mf ist die Trockenmasse der Rakete
+
