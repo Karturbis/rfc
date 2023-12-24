@@ -1,14 +1,12 @@
-import rocket_fuel_calculation
+import rocket_fuel_calculation as rocket_fc
 
 def rfc_print(genauigkeit, fschub, isp, zielhoehe, leermasse):
-    rfc = rocket_fuel_calculation.Rocket_fuel_calculation(genauigkeit, fschub, isp, zielhoehe, leermasse)
+    rfc = rocket_fc.Rocket_fuel_calculation(genauigkeit, fschub, isp, zielhoehe, leermasse)
     if genauigkeit == 1:
         ergebnis = str(round(rfc.calc1(), 3))
     
     print("Die Benötigte Menge an Treibstoff sind etwa: " + ergebnis + " Kilogram.")
 
-def rfc_create():
-    pass
 
 def cli():
     genauigkeit = int(input("Bitte geben sie für die genauigkeit der Berechnung eine Zahl zwischen 1 und 1 ein\n>> "))
