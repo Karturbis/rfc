@@ -8,6 +8,9 @@ Gegeben:
     Massendurchsatz [kg/s] (m.) m. ist also die Treibstoffverbrauchsrate d.h. die Ableitung des Treibstoffverbrauches zur Zeit.
 
 Der Weg 0:
+    ###################################
+    Does not Work yet!
+    ###################################
 
     Wir Ignorieren den Luftwiederstand und den Fakt, das die Gravitation sich aendert.
 
@@ -58,6 +61,9 @@ Der Weg 0:
         Ist Kompliziert //TODO
     
 Der Weg 1:
+    ###################################
+    Does not Work yet!
+    ###################################
 
     Gesucht:
         Masse an benötigtem Raketentreibstoff
@@ -94,11 +100,12 @@ Der Weg 1:
 
     Der Weg 2:
 
-        {Delta}v = Isp*g*ln(m0/mf)
-
-        {Delta}v ist die gesamt benötigte geschwindigkeitsänderung
-        Isp ist der Spezifische Impuls des Antriebs
-        g ist die Gravitation am Erdboden (etwa 9.81)
-        m0 ist die Startmasse der Rakete, d.h. Trockenmasse + Treibstoff
-        mf ist die Trockenmasse der Rakete
-
+        Gesucht:
+            Benötigte Energie um die Rakete auf die vorgegebene höhe zu bringen.
+        
+        Gegeben:
+            Schub[N]
+            Höhe[m]
+            Masse der Rakete[kg]
+        
+        
